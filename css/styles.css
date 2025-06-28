@@ -104,6 +104,7 @@ body {
 .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
 .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
 .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; } /* Added for smaller tags */
 .text-center { text-align: center; }
 .font-bold { font-weight: 700; }
 .font-extrabold { font-weight: 800; }
@@ -327,4 +328,45 @@ body {
 .checkbox-group input[type="checkbox"]:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* focus:ring-blue-500 */
+}
+
+/* Styles for the Passion Discovery Report */
+.passion-suggestion-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.25rem; /* p-5 */
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.passion-suggestion-card h4 {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #1d4ed8; /* text-blue-700 */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.passion-suggestion-card p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.passion-suggestion-card .explore-links a {
+    display: inline-block;
+    background-color: #e0f2fe; /* light blue */
+    color: #1d4ed8; /* blue-700 */
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.375rem 0.75rem; /* py-1.5 px-3 */
+    border-radius: 0.375rem; /* rounded-md */
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.passion-suggestion-card .explore-links a:hover {
+    background-color: #bfdbfe; /* lighter blue */
 }
