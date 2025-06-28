@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - script.js is running.');
+
     // --- Passion Discovery Logic (Checkbox-based) ---
     const showPassionsBtn = document.getElementById('showPassionsBtn');
     const passionReport = document.getElementById('passionReport');
@@ -298,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
             careers: ["Food Policy Analyst", "Community Food Organizer", "Sustainable Agriculture Specialist", "Farmer's Market Manager"],
             exploreLinks: [
                 { text: "National Young Farmers Coalition", url: "https://www.youngfarmers.org/" },
-                { text: "Local Food Hubs" }
+                { text: "USDA Urban Agriculture", url: "https://www.farmers.gov/urban" }
             ]
         },
         "Human Rights Activism": {
@@ -748,10 +750,97 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Celebrate your cultural background and share it with others. Organize events, food festivals, and discussions.",
             state: "ALL", // Applicable nationwide as a general idea
             subject: "Arts",
-            duration: "Arts",
             immigrantFriendly: true,
             contact: "YourSchoolClub@email.com"
         },
+        {
+            name: "Youth STEM Innovators",
+            description: "Explore science, technology, engineering, and math through hands-on projects and competitions.",
+            state: "CA",
+            subject: "STEM",
+            immigrantFriendly: false,
+            contact: "info@steminnovators.org"
+        },
+        {
+            name: "ESL Peer Tutoring",
+            description: "Get help with English language skills from older students or volunteer tutors. Great for improving confidence!",
+            state: "NY",
+            subject: "ESL",
+            immigrantFriendly: true,
+            contact: "ESLTutoring@school.edu"
+        },
+        {
+            name: "Community Garden Project",
+            description: "Work with your community to grow fresh produce and learn about sustainable living.",
+            state: "TX",
+            subject: "Community Service",
+            immigrantFriendly: true,
+            contact: "localgarden@community.org"
+        },
+        {
+            name: "Model United Nations (MUN)",
+            description: "Develop public speaking, debate, and negotiation skills while discussing global issues.",
+            state: "FL",
+            subject: "Leadership",
+            immigrantFriendly: false,
+            contact: "munclub@school.edu"
+        },
+        {
+            name: "Dreamer's Leadership Circle",
+            description: "A leadership program specifically for undocumented and DACA students, focusing on advocacy and empowerment.",
+            state: "CA",
+            subject: "Leadership",
+            immigrantFriendly: true,
+            contact: "dreamerslead@org.com"
+        },
+        {
+            name: "Robotics Team",
+            description: "Design, build, and program robots for competitive challenges.",
+            state: "IL",
+            subject: "STEM",
+            immigrantFriendly: false,
+            contact: "robotics@school.org"
+        },
+        {
+            name: "International Student Alliance",
+            description: "Connect with other international and immigrant students, share experiences, and find support.",
+            state: "MA",
+            subject: "Community Service",
+            immigrantFriendly: true,
+            contact: "isa@university.edu"
+        },
+        {
+            name: "High School Soccer Team",
+            description: "Join your school's soccer team and connect with peers through sports.",
+            state: "GA",
+            subject: "Sports",
+            immigrantFriendly: false,
+            contact: "coach@school.com"
+        },
+        {
+            name: "Local Library Homework Help",
+            description: "A free program offered by local libraries providing academic assistance across various subjects.",
+            state: "WA",
+            subject: "Community Service",
+            immigrantFriendly: false, // Not specifically for immigrants, but open to all
+            contact: "yourlocalibrary.org"
+        },
+        {
+            name: "Youth Mentorship Program (Local)",
+            description: "Connect with adult mentors for academic and personal guidance.",
+            state: "VA",
+            subject: "Mentorship",
+            immigrantFriendly: true,
+            contact: "youthmentors@community.org"
+        },
+        {
+            name: "Arts & Crafts Workshop",
+            description: "Explore various artistic mediums and express your creativity. Often free and open to all.",
+            state: "PA",
+            subject: "Arts",
+            immigrantFriendly: false,
+            contact: "artcenter@city.gov"
+        }
     ];
 
     // --- Scholarships Data (Sample Data) ---
@@ -761,7 +850,10 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Provides scholarships to students of Hispanic heritage. Offers additional support services.",
             state: "NATIONAL",
             subject: "Any",
-            status: "Any Immigrant Status",
+            status: "Any Status",
+            ethnicity: "Hispanic, Latino, or Spanish",
+            gpa: "3.0",
+            type: "Academic Achievement",
             link: "https://www.hsf.net/"
         },
         {
@@ -769,7 +861,10 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Supports immigrant students in the DMV (DC, MD, VA) metropolitan area.",
             state: "VA",
             subject: "Any",
-            status: "Any Immigrant Status",
+            status: "Any Status",
+            ethnicity: "Any",
+            gpa: "2.5",
+            type: "Need-Based",
             link: "https://www.esperanzafund.org/"
         },
         {
@@ -777,7 +872,10 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Scholarship for undocumented students, emphasizing personal stories and community commitment.",
             state: "NATIONAL",
             subject: "Any",
-            status: "Undocumented",
+            status: "Any Status", // Covers undocumented
+            ethnicity: "Hispanic, Latino, or Spanish",
+            gpa: "3.0",
+            type: "Community Service",
             link: "https://ca-core.org/programs/que-llueva-cafe-scholarship/"
         },
         {
@@ -785,18 +883,65 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Prestigious scholarship for high-achieving high school seniors with significant financial need. Open to all eligible students, including immigrants.",
             state: "NATIONAL",
             subject: "Any",
-            status: "Any Status",
+            status: "Permanent Resident",
+            ethnicity: "Any",
+            gpa: "3.5",
+            type: "Merit-Based",
             link: "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
         },
         {
-            name: "Fred S. Findling Scholarship (Michigan)",
-            description: "One-time scholarship for immigrants currently enrolled in college/university in Michigan.",
-            state: "MI",
-            subject: "Any",
-            status: "Any Immigrant Status",
-            link: "https://theprobatepro.com/fred-s-findling-scholarship/" // Placeholder, actual link might vary
+            name: "California Dream Act Service Incentive Grant Program",
+            description: "Grants for California Dream Act applicants who volunteer in community service.",
+            state: "CA",
+            subject: "Community Service",
+            status: "Any Status", // Covers Undocumented, DACA
+            ethnicity: "Any",
+            gpa: "2.5",
+            type: "Community Service",
+            link: "https://www.csac.ca.gov/california-dream-act-service-incentive-grant-program"
         },
     ];
+
+    // --- Awards Data (NEW Sample Data) ---
+    const awardData = [
+        {
+            name: "Congressional Award",
+            description: "A non-partisan program recognizing initiative, service, and achievement in young people. Open to all US youth.",
+            type: "Leadership",
+            subject: "Any",
+            gpa: "Any",
+            immigrantSpecific: false,
+            link: "https://www.congressionalaward.org/"
+        },
+        {
+            name: "Regeneron Science Talent Search",
+            description: "The nation's oldest and most prestigious science and math competition for high school seniors.",
+            type: "Academic",
+            subject: "Science",
+            gpa: "3.5",
+            immigrantSpecific: false,
+            link: "https://www.societyforscience.org/regeneron-sts/"
+        },
+        {
+            name: "Scholastic Art & Writing Awards",
+            description: "The nation’s longest-running and most prestigious recognition program for creative teens.",
+            type: "Arts",
+            subject: "Arts",
+            gpa: "Any",
+            immigrantSpecific: false,
+            link: "https://www.artandwriting.org/"
+        },
+        {
+            name: "National Merit Scholarship Program (Commended/Finalist)",
+            description: "Recognizes academically talented high school students based on PSAT/NMSQT scores.",
+            type: "Academic",
+            subject: "Any",
+            gpa: "3.5", // Implied high GPA
+            immigrantSpecific: false,
+            link: "https://www.nationalmerit.org/"
+        },
+    ];
+
 
     // --- Filter and Render Functions ---
 
@@ -804,6 +949,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const noExtracurricularsMsg = document.getElementById('noExtracurriculars');
     const scholarshipListDiv = document.getElementById('scholarshipList');
     const noScholarshipsMsg = document.getElementById('noScholarships');
+    const awardListDiv = document.getElementById('awardList'); // NEW
+    const noAwardsMsg = document.getElementById('noAwards'); // NEW
 
     function renderItems(data, listContainer, noResultsMessage, itemType) {
         listContainer.innerHTML = ''; // Clear previous items
@@ -818,20 +965,51 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('item-card');
 
             let tagsHtml = '';
-            if (item.state && item.state !== 'ALL' && item.state !== 'NATIONAL') {
-                tagsHtml += `<span>State: ${item.state}</span>`;
-            } else if (item.state === 'ALL' || item.state === 'NATIONAL') {
-                tagsHtml += `<span>National</span>`;
+
+            // Common tags (State/Subject are common across all sample data types, but could be specific)
+            if (item.state) {
+                tagsHtml += `<span>State: ${item.state === 'NATIONAL' ? 'National' : item.state}</span>`;
             }
             if (item.subject) {
                 tagsHtml += `<span>Subject: ${item.subject}</span>`;
             }
-            if (item.immigrantFriendly !== undefined) {
+
+            // Tags specific to Extracurriculars
+            if (itemType === 'extracurricular' && item.immigrantFriendly !== undefined) {
                 if (item.immigrantFriendly) tagsHtml += `<span>Immigrant Focused</span>`;
             }
-            if (item.status) {
-                tagsHtml += `<span>Status: ${item.status}</span>`;
+
+            // Tags specific to Scholarships
+            if (itemType === 'scholarship') {
+                if (item.status && item.status !== "Any Status") {
+                    tagsHtml += `<span>Status: ${item.status}</span>`;
+                }
+                if (item.ethnicity && item.ethnicity !== "Any") {
+                    // Split ethnicity string if it contains multiple for individual tags
+                    const ethnicities = item.ethnicity.split(', ').map(e => `<span>Ethnicity: ${e}</span>`).join('');
+                    tagsHtml += ethnicities;
+                }
+                if (item.gpa && item.gpa !== "Any") {
+                    tagsHtml += `<span>GPA: ${item.gpa}+</span>`;
+                }
+                if (item.type) {
+                    tagsHtml += `<span>Type: ${item.type}</span>`;
+                }
             }
+
+            // Tags specific to Awards (NEW)
+            if (itemType === 'award') {
+                if (item.type) {
+                    tagsHtml += `<span>Type: ${item.type}</span>`;
+                }
+                if (item.gpa && item.gpa !== "Any") {
+                    tagsHtml += `<span>GPA: ${item.gpa}+</span>`;
+                }
+                if (item.immigrantSpecific) {
+                    tagsHtml += `<span>Immigrant Specific</span>`;
+                }
+            }
+
 
             card.innerHTML = `
                 <h3>${item.name}</h3>
@@ -862,19 +1040,56 @@ document.addEventListener('DOMContentLoaded', () => {
         const stateFilter = document.getElementById('scholarshipStateFilter').value;
         const subjectFilter = document.getElementById('scholarshipSubjectFilter').value;
         const statusFilter = document.getElementById('scholarshipStatusFilter').value;
+        const ethnicityFilter = document.getElementById('ethnicityFilter').value;
+        const gpaFilter = document.getElementById('gpaFilter').value;
+        const typeFilter = document.getElementById('scholarshipTypeFilter').value;
 
         const filtered = scholarshipData.filter(item => {
             const matchesState = (stateFilter === "" || item.state === "NATIONAL" || item.state === "ALL" || item.state === stateFilter);
             const matchesSubject = (subjectFilter === "" || item.subject === "Any" || item.subject === subjectFilter);
-            const matchesStatus = (statusFilter === "" || item.status === statusFilter || item.status.includes(statusFilter) || item.status === "Any Immigrant Status" || item.status === "Any Status");
-            return matchesState && matchesSubject && matchesStatus;
+
+            // Immigration Status Filter: Check if the item's status includes the filter value or is "Any Status"
+            const matchesStatus = (statusFilter === "" || item.status === "Any Status" || item.status.includes(statusFilter));
+
+            // Ethnicity Filter: Check if the item's ethnicity includes the filter value or is "Any"
+            // Handles cases where an item might apply to multiple ethnicities (e.g., "Black or African American, Asian")
+            const matchesEthnicity = (ethnicityFilter === "" || item.ethnicity === "Any" || (item.ethnicity && item.ethnicity.includes(ethnicityFilter)));
+
+            // GPA Filter: If filter is "Any GPA", it always matches. Otherwise, check if item's GPA is >= filter GPA
+            // Ensure item.gpa is treated as a number for comparison
+            const matchesGPA = (gpaFilter === "" || gpaFilter === "Any" || (item.gpa && parseFloat(item.gpa) >= parseFloat(gpaFilter)));
+
+            // Scholarship Type Filter
+            const matchesType = (typeFilter === "" || item.type === typeFilter);
+
+
+            return matchesState && matchesSubject && matchesStatus && matchesEthnicity && matchesGPA && matchesType;
         });
         renderItems(filtered, scholarshipListDiv, noScholarshipsMsg, 'scholarship');
     }
 
+    // NEW: Filter Awards Function
+    function filterAwards() {
+        const typeFilter = document.getElementById('awardTypeFilter').value;
+        const subjectFilter = document.getElementById('awardSubjectFilter').value;
+        const gpaFilter = document.getElementById('awardGpaFilter').value;
+        const immigrantSpecificChecked = document.getElementById('immigrantSpecificAwardFilter').checked;
+
+        const filtered = awardData.filter(item => {
+            const matchesType = (typeFilter === "" || item.type === typeFilter);
+            const matchesSubject = (subjectFilter === "" || item.subject === "Any" || item.subject === subjectFilter);
+            const matchesGPA = (gpaFilter === "" || gpaFilter === "Any" || (item.gpa && parseFloat(item.gpa) >= parseFloat(gpaFilter)));
+            const matchesImmigrantSpecific = (!immigrantSpecificChecked || item.immigrantSpecific);
+            return matchesType && matchesSubject && matchesGPA && matchesImmigrantSpecific;
+        });
+        renderItems(filtered, awardListDiv, noAwardsMsg, 'award');
+    }
+
+
     // Initial render on page load
     filterExtracurriculars();
     filterScholarships();
+    filterAwards(); // NEW: Initial render for awards
 
     // Add event listeners for filters
     document.getElementById('extracurricularStateFilter').addEventListener('change', filterExtracurriculars);
@@ -884,6 +1099,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('scholarshipStateFilter').addEventListener('change', filterScholarships);
     document.getElementById('scholarshipSubjectFilter').addEventListener('change', filterScholarships);
     document.getElementById('scholarshipStatusFilter').addEventListener('change', filterScholarships);
+    document.getElementById('ethnicityFilter').addEventListener('change', filterScholarships);
+    document.getElementById('gpaFilter').addEventListener('change', filterScholarships);
+    document.getElementById('scholarshipTypeFilter').addEventListener('change', filterScholarships);
+
+    // NEW: Event listeners for Award filters
+    document.getElementById('awardTypeFilter').addEventListener('change', filterAwards);
+    document.getElementById('awardSubjectFilter').addEventListener('change', filterAwards);
+    document.getElementById('awardGpaFilter').addEventListener('change', filterAwards);
+    document.getElementById('immigrantSpecificAwardFilter').addEventListener('change', filterAwards);
+
 
     // --- Mentorship Modal Logic ---
     const mentorshipModal = document.getElementById('mentorshipModal');
@@ -892,42 +1117,90 @@ document.addEventListener('DOMContentLoaded', () => {
     const mentorshipForm = document.getElementById('mentorshipForm');
     const mentorshipConfirmation = document.getElementById('mentorshipConfirmation');
 
-    openMentorshipModalBtn.addEventListener('click', () => {
-        mentorshipModal.classList.remove('hidden');
-        mentorshipConfirmation.classList.add('hidden'); // Hide confirmation on re-open
-        mentorshipForm.reset(); // Clear form on re-open
+    // Log to confirm elements are found
+    console.log('Mentorship Modal Elements:', {
+        mentorshipModal,
+        openMentorshipModalBtn,
+        closeMentorshipModalBtn,
+        mentorshipForm,
+        mentorshipConfirmation
     });
 
-    closeMentorshipModalBtn.addEventListener('click', () => {
-        mentorshipModal.classList.add('hidden');
-    });
+    if (openMentorshipModalBtn) {
+        openMentorshipModalBtn.addEventListener('click', () => {
+            console.log('Open Mentorship Modal button clicked.');
+            if (mentorshipModal) {
+                mentorshipModal.classList.remove('hidden');
+                mentorshipConfirmation.classList.add('hidden'); // Hide confirmation on re-open
+                mentorshipForm.reset(); // Clear form on re-open
+                console.log('Mentorship modal opened.');
+            } else {
+                console.error('Mentorship modal element not found!');
+            }
+        });
+    } else {
+        console.error('Open Mentorship Modal button not found!');
+    }
+
+    if (closeMentorshipModalBtn) {
+        closeMentorshipModalBtn.addEventListener('click', () => {
+            console.log('Close Mentorship Modal button clicked.');
+            if (mentorshipModal) {
+                mentorshipModal.classList.add('hidden');
+                console.log('Mentorship modal closed.');
+            } else {
+                console.error('Mentorship modal element not found when trying to close!');
+            }
+        });
+    } else {
+        console.error('Close Mentorship Modal button not found!');
+    }
+
 
     // Close modal if user clicks outside of it
-    mentorshipModal.addEventListener('click', (event) => {
-        if (event.target === mentorshipModal) {
-            mentorshipModal.classList.add('hidden');
-        }
-    });
+    if (mentorshipModal) {
+        mentorshipModal.addEventListener('click', (event) => {
+            if (event.target === mentorshipModal) {
+                console.log('Clicked outside mentorship modal, closing.');
+                mentorshipModal.classList.add('hidden');
+            }
+        });
+    }
 
-    mentorshipForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent default form submission
+    if (mentorshipForm) {
+        mentorshipForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+            console.log('Mentorship Form submit event triggered.');
 
-        // In a real application, you would send this data to a server (e.g., using fetch API)
-        // For this example, we'll just show a confirmation message.
-        console.log('Mentorship Form Submitted:');
-        console.log('Name:', document.getElementById('mentorName').value);
-        console.log('Email:', document.getElementById('mentorEmail').value);
-        console.log('Interests:', document.getElementById('mentorInterests').value);
+            // In a real application, you would send this data to a server (e.g., using fetch API)
+            // For this example, we'll just show a confirmation message.
+            console.log('Mentorship Form Submitted Data:');
+            console.log('Name:', document.getElementById('mentorName').value);
+            console.log('Email:', document.getElementById('mentorEmail').value);
+            console.log('Interests:', document.getElementById('mentorInterests').value);
 
-        // Show confirmation message
-        mentorshipConfirmation.classList.remove('hidden');
+            // Show confirmation message
+            if (mentorshipConfirmation) {
+                mentorshipConfirmation.classList.remove('hidden');
+                console.log('Mentorship confirmation message shown.');
+            } else {
+                console.error('Mentorship confirmation element not found!');
+            }
 
-        // Optionally, hide the form after submission, or just show the confirmation
-        // mentorshipForm.classList.add('hidden');
-        // You might disable the submit button or clear inputs if you want to allow re-submission easily
-        mentorshipForm.querySelector('button[type="submit"]').disabled = true;
-        setTimeout(() => {
-            mentorshipForm.querySelector('button[type="submit"]').disabled = false;
-        }, 3000); // Re-enable after 3 seconds
-    });
+
+            // Optionally, hide the form after submission, or just show the confirmation
+            // mentorshipForm.classList.add('hidden');
+            // You might disable the submit button or clear inputs if you want to allow re-submission easily
+            const submitButton = mentorshipForm.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    console.log('Mentorship submit button re-enabled.');
+                }, 3000); // Re-enable after 3 seconds
+            }
+        });
+    } else {
+        console.error('Mentorship Form element not found!');
+    }
 });

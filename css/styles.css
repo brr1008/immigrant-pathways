@@ -186,6 +186,11 @@ body {
     border-color: #3b82f6; /* focus:border-blue-500 */
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* focus:ring-blue-500 */
 }
+/* Added cursor for all interactive elements */
+button, .form-checkbox, .form-input, .form-textarea, .form-select, a {
+    cursor: pointer;
+}
+
 .form-checkbox {
     appearance: none; /* Hide default checkbox */
     display: inline-block;
@@ -262,7 +267,7 @@ body {
     padding: 0.25rem 0.5rem; /* px-2 py-1 */
     border-radius: 0.25rem; /* rounded-md */
     margin-right: 0.5rem; /* mr-2 */
-    margin-bottom: 0.5rem; /* mb-2 */
+    margin-bottom: 0.5rem;
 }
 
 /* Styles for the new passion discovery checkboxes */
