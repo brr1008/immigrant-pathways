@@ -743,104 +743,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Extracurriculars Data (Sample Data) ---
-    const extracurricularData = [
+    // --- Summer Programs Data (Sample Data) ---
+    const summerPrograms = [
         {
-            name: "Cultural Heritage Club",
-            description: "Celebrate your cultural background and share it with others. Organize events, food festivals, and discussions.",
-            state: "ALL", // Applicable nationwide as a general idea
-            subject: "Arts",
+            name: "Girls Who Code Summer Immersion Program/Summer Self-Paced Program",
+            description: "High school students gain the computer science skills they need to make an impact and prepare for tech careers in our free, virtual Summer Programs.",
+            state: "Online", // Applicable nationwide as a general idea
+            subject: "Computer Science",
             immigrantFriendly: true,
-            contact: "YourSchoolClub@email.com"
+            contact: "info@girlswhocode.com"
         },
-        {
-            name: "Youth STEM Innovators",
-            description: "Explore science, technology, engineering, and math through hands-on projects and competitions.",
-            state: "CA",
-            subject: "STEM",
-            immigrantFriendly: false,
-            contact: "info@steminnovators.org"
-        },
-        {
-            name: "ESL Peer Tutoring",
-            description: "Get help with English language skills from older students or volunteer tutors. Great for improving confidence!",
-            state: "NY",
-            subject: "ESL",
-            immigrantFriendly: true,
-            contact: "ESLTutoring@school.edu"
-        },
-        {
-            name: "Community Garden Project",
-            description: "Work with your community to grow fresh produce and learn about sustainable living.",
-            state: "TX",
-            subject: "Community Service",
-            immigrantFriendly: true,
-            contact: "localgarden@community.org"
-        },
-        {
-            name: "Model United Nations (MUN)",
-            description: "Develop public speaking, debate, and negotiation skills while discussing global issues.",
-            state: "FL",
-            subject: "Leadership",
-            immigrantFriendly: false,
-            contact: "munclub@school.edu"
-        },
-        {
-            name: "Dreamer's Leadership Circle",
-            description: "A leadership program specifically for undocumented and DACA students, focusing on advocacy and empowerment.",
-            state: "CA",
-            subject: "Leadership",
-            immigrantFriendly: true,
-            contact: "dreamerslead@org.com"
-        },
-        {
-            name: "Robotics Team",
-            description: "Design, build, and program robots for competitive challenges.",
-            state: "IL",
-            subject: "STEM",
-            immigrantFriendly: false,
-            contact: "robotics@school.org"
-        },
-        {
-            name: "International Student Alliance",
-            description: "Connect with other international and immigrant students, share experiences, and find support.",
-            state: "MA",
-            subject: "Community Service",
-            immigrantFriendly: true,
-            contact: "isa@university.edu"
-        },
-        {
-            name: "High School Soccer Team",
-            description: "Join your school's soccer team and connect with peers through sports.",
-            state: "GA",
-            subject: "Sports",
-            immigrantFriendly: false,
-            contact: "coach@school.com"
-        },
-        {
-            name: "Local Library Homework Help",
-            description: "A free program offered by local libraries providing academic assistance across various subjects.",
-            state: "WA",
-            subject: "Community Service",
-            immigrantFriendly: false, // Not specifically for immigrants, but open to all
-            contact: "yourlocalibrary.org"
-        },
-        {
-            name: "Youth Mentorship Program (Local)",
-            description: "Connect with adult mentors for academic and personal guidance.",
-            state: "VA",
-            subject: "Mentorship",
-            immigrantFriendly: true,
-            contact: "youthmentors@community.org"
-        },
-        {
-            name: "Arts & Crafts Workshop",
-            description: "Explore various artistic mediums and express your creativity. Often free and open to all.",
-            state: "PA",
-            subject: "Arts",
-            immigrantFriendly: false,
-            contact: "artcenter@city.gov"
-        }
     ];
 
     // --- Scholarships Data (Sample Data) ---
