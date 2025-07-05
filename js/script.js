@@ -750,9 +750,27 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "High school students gain the computer science skills they need to make an impact and prepare for tech careers in our free, virtual Summer Programs.",
             state: "Online", // Applicable nationwide as a general idea
             subject: "Computer Science",
+            gpa: "Any",
+            status: "Any Status",
             immigrantFriendly: true,
             contact: "info@girlswhocode.com"
         },
+        {
+            name: "Black Girls Code Summer Program",
+            description: "Empowers young women of color to become innovators in STEM fields through coding workshops and mentorship.",
+            state: "Online",
+            subject: "Computer Science",
+            gpa: "Any",
+            status: "Any Status",
+            immigrantFriendly: true,
+            contact: "info@blackgirlscode.com"
+        },
+        {
+            name: "Energy Empowerment Program",
+            description: "Yearlong internship opportunity that prepares students to join the workforce and introduces them to a variety of careers in the energy sector.",
+            state: "Houston, Texas",
+            subject: ""
+        }
     ];
 
     // --- Scholarships Data (Sample Data) ---

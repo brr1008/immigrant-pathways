@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immigrant Pathways: Discover Your Future</title>
+    <title>Bridges and Beacons: Discover Your Future</title>
     <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -14,7 +14,7 @@
     <!-- Navigation Bar -->
     <nav class="bg-blue-700 p-4 shadow-lg sticky top-0 z-50">
         <div class="container flex justify-between items-center">
-            <a href="#" class="text-white text-2xl font-bold rounded-md px-3 py-1 hover:bg-blue-600 transition duration-300">Immigrant Pathways</a>
+            <a href="#" class="text-white text-2xl font-bold rounded-md px-3 py-1 hover:bg-blue-600 transition duration-300">Bridges and Beacons</a>
             <div class="flex space-x-4">
                 <a href="#passion-discovery" class="text-white hover:text-blue-200 transition duration-300 rounded-md px-3 py-1 hover:bg-blue-600">Discover Passion</a>
                 <a href="#extracurriculars" class="text-white hover:text-blue-200 transition duration-300 rounded-md px-3 py-1 hover:bg-blue-600">Extracurriculars</a>
@@ -198,9 +198,8 @@
             <!-- Filters for Summer Programs -->
             <div class="flex flex-wrap gap-4 justify-center mb-6">
                 <div class="w-full sm:w-auto">
-                    <label for="summerProgramStateFilter" class="block text-sm font-medium text-gray-700 mb-1">State:</label>
-                    <select id="summerProgramStateFilter" class="form-select">
-                        <option value="">All States</option>
+                    <label for="summerProgramLocationFilter" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                    <select id="summerProgramLocationFilter" class="form-select">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -262,18 +261,43 @@
                         <option value="NATIONAL">National</option>
                     </select>
                 </div>
-                <div class="w-full sm:w-auto">
-                    <label for="summerProgramsFilter" class="block text-sm font-medium text-gray-700 mb-1">Subject/Interest:</label>
-                    <select id="summerProgramsFilter" class="form-select">
-                        <option value="">All Subjects</option>
-                        <option value="STEM">STEM</option>
-                        <option value="Arts">Arts & Culture</option>
-                        <option value="Community Service">Community Service</option>
-                        <option value="Leadership">Leadership</option>
-                        <option value="ESL">Language Support (ESL)</option>
-                        <option value="Sports">Sports</option>
-                        <option value="Mentorship">Mentorship</option>
-                    </select>
+                <div class="flexx flex-wrap gap-4 justify-center mb-6">
+                    <div class="w-full sm:w-auto">
+                        <label for="summerProgramMainCategoryFilter" class="block text-sm font-medium text-gray-700 mb-1">Main Cateogry:</label>
+                        <select id="summerProgramMainCategoryFilter" class="form-select">
+                            <option value="Arts">Arts</option>
+                            <option value="Commerce">Commerce</option>
+                            <option value="Humanities">Humanities</option>
+                            <option value="STEM">STEM</option>
+                        </select>
+                    </div>
+                    <div id="stemSubCategoryContainer" class="w-full sm:w-auto hidden">
+                        <label for="stemSubCategoryContainer" class="block text-sm font-medium text-gray-700 mb-1">STEM Area:</label>
+                        <select id="stemSubCategoryContainer" class="form-select">
+                            <option value="">All STEM Areas</option>
+                            <option value="Science">Science</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Math">Math</option>
+                        </select>
+                    </div>
+                    <div id="scienceSpecificContainer" class="w-full sm:w-auto hidden">
+                        <label for="scienceSpecificContainer" class="block text-sm font-medium text-gray-700 mb-1">Science Area:</label>
+                        <select id="scienceSpecificContainer" class="form-select">
+                            <option value="">All Sciences</option>
+                            <option value="Astronomy">Astronomy</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Earth Sciences">Earth Sciences</option>
+                            <option value="Ecological Sciences">Ecological Sciences</option>
+                            <option value="Forensics">Forensics</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Paleontology">Paleontology</option>
+                            <option value="Pharmaceuticals">Pharmaceuticals</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Psychology">Psychology</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="w-full sm:w-auto">
                     <label for="summerProgramsGpaFilter" class="block text-sm font-medium text-gray-700 mb-1">GPA:</label>
@@ -314,7 +338,6 @@
                 <div class="w-full sm:w-auto">
                     <label for="scholarshipStateFilter" class="block text-sm font-medium text-gray-700 mb-1">State:</label>
                     <select id="scholarshipStateFilter" class="form-select">
-                        <option value="">All States</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -543,7 +566,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 text-center text-sm">
         <div class="container">
-            &copy; 2024 Immigrant Pathways. All rights reserved.
+            &copy; 2025 Bridges and Beacons. All rights reserved.
         </div>
     </footer>
 
